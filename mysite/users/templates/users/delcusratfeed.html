@@ -1,0 +1,12 @@
+{% extends "food/base.html" %}
+
+
+{% block body  %}
+
+<form method="POST">
+    {% csrf_token %}
+    <h3> Are you sure you want to delete {{ crfo.ratings }}</h3>
+    <button type=submit>Yes Confirm</button>
+    <a href="{% url 'food:detail' item.id obj.id %}">Back</a>
+
+{% endblock  %}

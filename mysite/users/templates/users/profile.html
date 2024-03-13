@@ -1,0 +1,39 @@
+{% extends 'food/base.html' %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 offset-md-4">
+            <div class="card">
+                <div class="card-header text-white bg-info">
+                    <div class="card-title">
+                        Profile
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class=row>
+                        <div>
+                            <img style="border-radius:50px" width="100px" height="100px" src="{{ user.profile.image.url }}">
+                            <br><span style="font-size:1rem; padding-top:30px">Username: {{ user.username }}</span>
+                        </div>
+                        <div class="offset-md-2">
+                            <span style="font-size: 1.5rem">{{ user.first_name | title }}</span>
+                            <span style="font-size: 1.5rem">{{ user.last_name | title }}</span>
+                            <br><span style="font-size: 1rem">{{ user.email }}</span>
+                            <br><span style="font-size: 1rem">Location: {{ user.profile.location }}</span>
+                            <br><br><a href="{% url 'profformedit' user.id %}" class="btn btn-warning btn-sm">
+                                Edit
+                            </a>
+                            <a href="{% url 'food:index' %}" class="btn btn-success btn-sm">
+                                Home
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

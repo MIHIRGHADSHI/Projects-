@@ -1,0 +1,10 @@
+{% extends "food/base.html" %}
+
+{% block body %}
+
+<form method="POST">
+    {% csrf_token %}
+    <h1> Are you sure you want to Logout</h1>
+    <br><button type=submit>Yes Confirm</button></br>
+</form>    
+{% endblock body %}
